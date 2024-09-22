@@ -19,6 +19,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http ) throws Exception {
 
         http
+        //desabilitando isso, aceita as requisições e deixa de retornar 403
         .csrf(csrf -> csrf.disable())
         .oauth2ResourceServer(oauth2 -> oauth2
         .jwt(jwt -> jwt.jwtAuthenticationConverter(new JWTConverter())));
